@@ -1,0 +1,31 @@
+[tool.poetry]
+name = "pypoints2grid"
+version = "0.1.0"
+license = "BSD-4-Clause"
+description = "implemention of points2grid algorithm"
+authors = ["Dag Wästberg <dwastberg@gmail.com>"]
+readme = "README.md"
+homepage = "https://github.com/dwastberg/pypoint2grid"
+repository = "https://github.com/dwastberg/pypoint2grid"
+classifiers = [
+    "Topic :: Scientific/Engineering :: GIS"
+]
+include = [
+    "LICENSE",
+]
+
+
+[tool.poetry.dependencies]
+python = "^3.8"
+numpy = "^1.23.3"
+pybind11 = "^2.10.0"
+
+[tool.poetry.group.dev.dependencies]
+black = "^22.10.0"
+
+[tool.poetry.build]
+script = "build.py"
+
+[build-system]
+requires = ["poetry-core","pybind11>=2.10.0","setuptools>=42", "wheel"]
+build-backend = "poetry.core.masonry.api"
