@@ -1,4 +1,3 @@
-from xml.etree.ElementInclude import include
 from pybind11.setup_helpers import Pybind11Extension, build_ext
 
 def build(setup_kwargs):

@@ -86,8 +86,6 @@ public:
     max_y = _max_y;
 
     window_size = _window_size;
-
-    cerr << setprecision(12) << "min_x: " << min_x << " max_x " << max_x << " min_y " << min_y << " max_y " << max_y << endl;
   }
 
   ~Interpolator()

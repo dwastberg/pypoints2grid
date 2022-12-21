@@ -75,6 +75,6 @@ py::array_t<double> _points2grid(py::array_t<double> pts, double cell_size,
 }
 
 PYBIND11_MODULE(_points2grid, m) {
-  m.doc() = "implemention of points2grid algorithm";
+  m.doc() = "imple  mentation of points2grid algorithm";
   m.def("_points2grid", &_points2grid, "generate grid from pointcloud");
 }

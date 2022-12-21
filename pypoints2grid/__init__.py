@@ -7,7 +7,7 @@ def points2grid(pts, cell_size, bounds=None, radius=0, window_size=3, verbose=Fa
     if type(pts) is not np.ndarray:
         pts = np.array(pts)
     if len(pts.shape) != 2 or pts.shape[1] != 3:
-        raise ValueError(f"points has dimension {pts.shape}. Must have (N,3)")
+        raise ValueError(f"points has dimension {pts.shape}. Must be (N,3)")
     check_bounds = True
     if bounds is None:
         x_min, y_min, z_min = pts.min(axis=0)
