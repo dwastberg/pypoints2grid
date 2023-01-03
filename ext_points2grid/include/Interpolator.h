@@ -58,7 +58,7 @@ POSSIBILITY OF SUCH DAMAGE.
 #include <math.h>
 
 #include "GridPoint.h"
-
+#include "GridEnum.h"
 
 using namespace std;
 
@@ -70,7 +70,7 @@ public:
                double radius,
                double _min_x, double _max_x,
                double _min_y, double _max_y,
-               int _window_size)
+               int _window_size, const size_t grid_data=0)
   {
     GRID_DIST_X = dist_x;
     GRID_DIST_Y = dist_y;

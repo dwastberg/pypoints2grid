@@ -21,16 +21,49 @@ class TestDemSize(unittest.TestCase):
         dem = points2grid(self.pts, 0.01, bounds=bounds)
         self.assertEqual(dem.shape, (50, 50), "incorrect bounded dem size")
 
-class TestDemValues(unittest.TestCase):
+
+class TestDemIDW(unittest.TestCase):
     def setUp(self) -> None:
         pt_count = 10000
         xy = np.random.rand(pt_count, 2)
-        z = np.ones(pt_count).reshape((-1,1))
-        self.pts = np.hstack((xy,z))
-        
+        z = np.ones(pt_count).reshape((-1, 1))
+        self.pts = np.hstack((xy, z))
+
     def test_dem_values(self):
         dem = points2grid(self.pts, 0.01)
-        self.assertTrue(np.alltrue(dem==1))
+        self.assertTrue(np.alltrue(dem == 1))
+
+
+class TestDemMinMax(unittest.TestCase):
+    def setUp(self) -> None:
+        pt_count = 10000
+        xy = np.random.rand(pt_count, 2)
+        z = np.ones(pt_count).reshape((-1, 1))
+        z[240] = -100
+        z[450] = 100
+        self.pts = np.hstack((xy, z))
+
+    def test_min_dem_value(self):
+        dem = points2grid(self.pts, 0.01, window_size=0, grid_data=['min'])
+
+        self.assertEqual(dem.min(), -100)
+        self.assertTrue(np.sum(dem == -100) < 3)
+
+    def test_max_dem_value(self):
+        dem = points2grid(self.pts, 0.01, window_size=0, grid_data=['max'])
+        self.assertTrue(dem.max() == 100)
+        self.assertTrue(np.sum(dem == 100) < 3)
+
+    def test_multiple_grid_data(self):
+        dem = points2grid(self.pts, 0.01, window_size=3, grid_data=['idw', 'min', 'max'])
+        dem_idw = points2grid(self.pts, 0.01, window_size=3, grid_data=['idw'])
+        dem_min = points2grid(self.pts, 0.01, window_size=3, grid_data=['min'])
+        dem_max = points2grid(self.pts, 0.01, window_size=3, grid_data=['max'])
+        w, h, c = dem.shape
+        self.assertEqual(c, 3)
+        self.assertTrue(np.alltrue(dem[:, :, 0] == dem_idw))
+        self.assertTrue(np.alltrue(dem[:, :, 1] == dem_min))
+        self.assertTrue(np.alltrue(dem[:, :, 2] == dem_max))
 
 
 if __name__ == "__main__":
