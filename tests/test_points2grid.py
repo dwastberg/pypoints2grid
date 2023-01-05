@@ -24,7 +24,7 @@ class TestDemSize(unittest.TestCase):
 
 class TestDemIDW(unittest.TestCase):
     def setUp(self) -> None:
-        pt_count = 10000
+        pt_count = 25000
         xy = np.random.rand(pt_count, 2)
         z = np.ones(pt_count).reshape((-1, 1))
         self.pts = np.hstack((xy, z))
