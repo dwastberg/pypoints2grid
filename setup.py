@@ -12,7 +12,7 @@ install_requires = \
 
 setup_kwargs = {
     'name': 'pypoints2grid',
-    'version': '0.1.1',
+    'version': '0.2.3',
     'description': 'implementation of points2grid algorithm',
     'long_description': '# pypoints2grid\nPython library implementing points2grid algorithm (https://www.opentopography.org/otsoftware/points2grid)\n',
     'author': 'Dag Wästberg',
