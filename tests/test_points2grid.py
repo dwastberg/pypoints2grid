@@ -36,7 +36,7 @@ class TestDemIDW(unittest.TestCase):
 
 class TestDemMinMax(unittest.TestCase):
     def setUp(self) -> None:
-        pt_count = 10000
+        pt_count = 25000
         xy = np.random.rand(pt_count, 2)
         z = np.ones(pt_count).reshape((-1, 1))
         z[240] = -100
