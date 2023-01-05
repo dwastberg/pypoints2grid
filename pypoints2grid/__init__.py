@@ -10,7 +10,8 @@ class GridData(Enum):
     MEAN = 1 << 3
     STD = 1 << 4
 
-def points2grid(pts, cell_size, bounds=None, radius=0, window_size=3, grid_data = ['idw'], verbose=False):
+
+def points2grid(pts, cell_size, bounds=None, radius=0, window_size=3, grid_data=['idw'], verbose=False):
     if type(pts) is not np.ndarray:
         pts = np.array(pts)
     if len(pts.shape) != 2 or pts.shape[1] != 3:

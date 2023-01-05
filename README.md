@@ -56,13 +56,23 @@ cell_size = 0.5
 print("creating grid")
 start_time = time()
 dem = points2grid(pts, cell_size)
-print(f"grid created in {round(time() - start_time,2)} seconds")
+print(f"grid created in {round(time() - start_time, 2)} seconds")
 
-transform = Affine.transform = Affine.translation(x_min - cell_size / 2, y_min - cell_size / 2) * Affine.scale(
-    cell_size, cell_size)
+transform = Affine.transform = Affine.translation(
+    x_min - cell_size / 2, y_min - cell_size / 2
+) * Affine.scale(cell_size, cell_size)
 
-with rasterio.open("dem.tif", "w", driver="GTiff", height=dem.shape[0], width=dem.shape[1], count=1, dtype=dem.dtype,
-                   crs=crs, transform=transform) as dst:
+with rasterio.open(
+        "dem.tif",
+        "w",
+        driver="GTiff",
+        height=dem.shape[0],
+        width=dem.shape[1],
+        count=1,
+        dtype=dem.dtype,
+        crs=crs,
+        transform=transform,
+) as dst:
     dst.write(dem, 1)
 ```
 
