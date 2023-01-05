@@ -10,7 +10,6 @@ class GridData(Enum):
     MEAN = 1 << 3
     STD = 1 << 4
 
-
 def points2grid(pts, cell_size, bounds=None, radius=0, window_size=3, grid_data = ['idw'], verbose=False):
     if type(pts) is not np.ndarray:
         pts = np.array(pts)
@@ -28,7 +27,7 @@ def points2grid(pts, cell_size, bounds=None, radius=0, window_size=3, grid_data 
     if len(grid_data) == 0:
         grid_data = ['idw']
     grid_data = [GridData[x.upper()].value for x in grid_data]
-    grid_data = sum(grid_data)
+    grid_data_enum = sum(grid_data)
     
 
     result =  _points2grid(
@@ -41,8 +40,12 @@ def points2grid(pts, cell_size, bounds=None, radius=0, window_size=3, grid_data 
         radius,
         window_size,
         check_bounds,
-        grid_data,
+        grid_data_enum,
         verbose,
     )
     result = np.squeeze(result)
+    if len(grid_data) > 1:
+        grid_data_args = np.argsort(grid_data)
+        result = result[:, :, grid_data_args]
+        pass
     return result

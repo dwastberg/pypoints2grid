@@ -65,6 +65,17 @@ class TestDemMinMax(unittest.TestCase):
         self.assertTrue(np.alltrue(dem[:, :, 1] == dem_min))
         self.assertTrue(np.alltrue(dem[:, :, 2] == dem_max))
 
+    def test_multiple_grid_data_swapped_order(self):
+        dem = points2grid(self.pts, 0.01, window_size=3, grid_data=['mean', 'max', 'min'])
+        dem_mean = points2grid(self.pts, 0.01, window_size=3, grid_data=['mean'])
+        dem_min = points2grid(self.pts, 0.01, window_size=3, grid_data=['min'])
+        dem_max = points2grid(self.pts, 0.01, window_size=3, grid_data=['max'])
+        w, h, c = dem.shape
+        self.assertEqual(c, 3)
+        self.assertTrue(np.alltrue(dem[:, :, 0] == dem_mean))
+        self.assertTrue(np.alltrue(dem[:, :, 1] == dem_max))
+        self.assertTrue(np.alltrue(dem[:, :, 2] == dem_min))
+
 
 if __name__ == "__main__":
     unittest.main()
