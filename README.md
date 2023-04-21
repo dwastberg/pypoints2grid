@@ -1,7 +1,7 @@
 
 # pypoints2grid
 
-Python library wrapping the points2grid algorithm fo generate Digital Elevation Models (DEMs)
+Python library wrapping the points2grid algorithm for generate Digital Elevation Models (DEMs)
 from pointclouds.
 
 

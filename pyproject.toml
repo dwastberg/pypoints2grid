@@ -1,31 +1,23 @@
-[tool.poetry]
-name = "pypoints2grid"
-version = "0.1.0"
-license = "BSD-4-Clause"
-description = "implemention of points2grid algorithm"
-authors = ["Dag Wästberg <dwastberg@gmail.com>"]
-readme = "README.md"
-homepage = "https://github.com/dwastberg/pypoint2grid"
-repository = "https://github.com/dwastberg/pypoint2grid"
-classifiers = [
-    "Topic :: Scientific/Engineering :: GIS"
-]
-include = [
-    "LICENSE",
-]
-
-
-[tool.poetry.dependencies]
-python = "^3.8"
-numpy = "^1.10.0"
-pybind11 = "^2.10.0"
-
-[tool.poetry.group.dev.dependencies]
-black = "^22.10.0"
-
-[tool.poetry.build]
-script = "build.py"
-
 [build-system]
-requires = ["poetry-core","pybind11>=2.10.0","setuptools>=42", "wheel"]
-build-backend = "poetry.core.masonry.api"
+requires = ["setuptools>=42", "setuptools_scm[toml]>=3.4", "pybind11"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pypoints2grid"
+version = "0.1.2"
+description = "implemention of points2grid algorithm"
+readme = "README.md"
+authors = [
+    { name = "Dag Wästberg", email = "dwastberg@gmail.com" },
+]
+requires-python = ">=3.8"
+license = {text = "BSD-4-Clause"}
+classifiers = [
+    "Intended Audience :: Science/Research",
+    "Programming Language :: Python :: 3",
+]
+dependencies = [
+    'numpy>=1.23.3,<2.0.0',
+]
+
+
