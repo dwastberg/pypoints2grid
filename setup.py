@@ -19,8 +19,6 @@ setup_kwargs = {
     'long_description': '# pypoints2grid\nPython library implementing points2grid algorithm (https://www.opentopography.org/otsoftware/points2grid)\n',
     'author': 'Dag Wästberg',
     'author_email': 'dwastberg@gmail.com',
-    'maintainer': 'None',
-    'maintainer_email': 'None',
     'url': 'https://github.com/dwastberg/pypoint2grid',
     'packages': packages,
     'package_data': package_data,
