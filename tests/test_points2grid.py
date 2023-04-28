@@ -1,6 +1,6 @@
 import unittest
 
-from pypoints2grid import points2grid
+from src.pypoints2grid import points2grid
 
 import numpy as np
 

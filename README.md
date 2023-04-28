@@ -21,9 +21,9 @@ and
 for handeling IO and preparing your data.
 
 ```python
-from pypoints2grid import points2grid
+from src.pypoints2grid import points2grid
 
-dem = points2grid(pts, cell_size, bounds=None, radius=0, window_size=3, grid_data = ['idw'], verbose=False)
+dem = points2grid(pts, cell_size, bounds=None, radius=0, window_size=3, grid_data=['idw'], verbose=False)
 ```
 
 ### Parameters
@@ -57,7 +57,7 @@ from rasterio.transform import Affine
 import numpy as np
 from time import time
 
-from pypoints2grid import points2grid
+from src.pypoints2grid import points2grid
 
 las = laspy.read("pointcloud.las")
 crs = las.header.parse_crs()
@@ -78,9 +78,8 @@ start_time = time()
 dem = points2grid(pts, cell_size)
 print(f"grid created in {round(time() - start_time, 2)} seconds")
 
-transform = Affine.transform = Affine.translation(
-    x_min - cell_size / 2, y_min - cell_size / 2
-) * Affine.scale(cell_size, cell_size)
+transform = rasterio.transform.from_origin(x_min, y_max, cell_size, cell_size)
+
 
 with rasterio.open(
         "dem.tif",
@@ -93,7 +92,7 @@ with rasterio.open(
         crs=crs,
         transform=transform,
 ) as dst:
-    dst.write(dem, 1)
+   dst.write(dem, 1)
 ```
 
 

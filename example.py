@@ -4,7 +4,7 @@ from rasterio.transform import Affine
 import numpy as np
 from time import time
 
-from pypoints2grid import points2grid
+from src.pypoints2grid import points2grid
 
 las = laspy.read("pointcloud.las")
 crs = las.header.parse_crs()
@@ -25,9 +25,7 @@ start_time = time()
 dem = points2grid(pts, cell_size)
 print(f"grid created in {round(time() - start_time, 2)} seconds")
 
-transform = Affine.transform = Affine.translation(
-    x_min - cell_size / 2, y_min - cell_size / 2
-) * Affine.scale(cell_size, cell_size)
+transform = rasterio.transform.from_origin(x_min, y_max, cell_size, cell_size)
 
 with rasterio.open(
     "dem.tif",

@@ -1,4 +1,4 @@
-from pypoints2grid import points2grid
+from src.pypoints2grid import points2grid
 from statistics import mean, stdev
 import numpy as np
 
