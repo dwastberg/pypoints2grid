@@ -14,16 +14,6 @@ install_requires = \
 
 setup_kwargs = {
     'name': 'pypoints2grid',
-    'version': '0.2.3',
-    'description': 'implementation of points2grid algorithm',
-    'long_description': '# pypoints2grid\nPython library implementing points2grid algorithm (https://www.opentopography.org/otsoftware/points2grid)\n',
-    'author': 'Dag Wästberg',
-    'author_email': 'dwastberg@gmail.com',
-    'url': 'https://github.com/dwastberg/pypoint2grid',
-    'packages': packages,
-    'package_data': package_data,
-    'install_requires': install_requires,
-    'python_requires': '>=3.8,<4.0',
 }
 def build(setup_kwargs):
     ext_modules = [
