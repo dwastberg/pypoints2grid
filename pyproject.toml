@@ -10,6 +10,9 @@ readme = "README.md"
 authors = [
     { name = "Dag Wästberg", email = "dwastberg@gmail.com" },
 ]
+maintainers = [
+    { name = "Dag Wästberg", email = "dwastberg@gmail.com" },
+]
 requires-python = ">=3.8"
 license = {text = "BSD-4-Clause"}
 classifiers = [
