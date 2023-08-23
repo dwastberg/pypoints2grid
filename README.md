@@ -20,6 +20,11 @@ and
 [rasterio](https://rasterio.readthedocs.io/en/latest/)
 for handeling IO and preparing your data.
 
+```python
+from pypoints2grid import points2grid
+
+dem = points2grid(pts, cell_size, bounds=None, radius=0, window_size=3, grid_data=['idw'], verbose=False)
+```
 ### Parameters
  - __pts__: list of lists or numpy array of shape (n, 3) containing x, y, z coordinates of points
  - __cell_size__: size of the grid cells in meters
