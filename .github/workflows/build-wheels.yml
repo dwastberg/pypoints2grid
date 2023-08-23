@@ -32,7 +32,7 @@ jobs:
 
       - name: Publish wheels
         env:
-          TWINE_USERNAME: dwastberg
+          TWINE_USERNAME: __token__
           TWINE_PASSWORD: ${{ secrets.TEST_PYPI_TOKEN }}
         run: |
           twine upload --repository testpypi dist/*
