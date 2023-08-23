@@ -13,18 +13,12 @@ from pointclouds.
 - [Information about points2grid algorithm](https://www.opentopography.org/otsoftware/points2grid)
 
 ## Usage
-Note unlike the original C++ version of points2grid, pypoints2grid doesn't read or write data
+Note unlike the original C++ version of points2grid, pypoints2grid isn't a command line tool and doesn't read or write data
 from/to file or handle point cloud classification filtering. Use other libraries, like
 [laspy](https://laspy.readthedocs.io/en/latest/)
 and
 [rasterio](https://rasterio.readthedocs.io/en/latest/)
 for handeling IO and preparing your data.
-
-```python
-from src.pypoints2grid import points2grid
-
-dem = points2grid(pts, cell_size, bounds=None, radius=0, window_size=3, grid_data=['idw'], verbose=False)
-```
 
 ### Parameters
  - __pts__: list of lists or numpy array of shape (n, 3) containing x, y, z coordinates of points
