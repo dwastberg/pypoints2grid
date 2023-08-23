@@ -52,7 +52,7 @@ from rasterio.transform import Affine
 import numpy as np
 from time import time
 
-from src.pypoints2grid import points2grid
+from pypoints2grid import points2grid
 
 las = laspy.read("pointcloud.las")
 crs = las.header.parse_crs()
