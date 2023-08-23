@@ -11,7 +11,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ubuntu-latest, windows-latest, macOS-latest]
+        os: [ubuntu-latest, windows-latest, macOS-latest, macOS-arm64]
         python-version: ['3.8', '3.9', '3.10', '3.11']
 
     steps:
@@ -28,8 +28,7 @@ jobs:
           pip install cibuildwheel twine pybind11
     
       - name: Generate distribution archive
-        run: |
-          python setup.py sdist
+        run: pipx run build --sdist
 
       - name: Build wheels
         run: |
