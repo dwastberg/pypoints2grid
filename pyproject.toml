@@ -7,21 +7,13 @@ name = "pypoints2grid"
 version = "0.2.1"
 description = "implemention of points2grid algorithm"
 readme = "README.md"
-authors = [
-    { name = "Dag Wästberg", email = "dwastberg@gmail.com" },
-]
-maintainers = [
-    { name = "Dag Wästberg", email = "dwastberg@gmail.com" },
-]
+authors = [{ name = "Dag Wästberg", email = "dwastberg@gmail.com" }]
+maintainers = [{ name = "Dag Wästberg", email = "dwastberg@gmail.com" }]
 requires-python = ">=3.8"
-license = {text = "BSD-4-Clause"}
+license = { text = "BSD-4-Clause" }
 classifiers = [
     "Intended Audience :: Science/Research",
     "Programming Language :: Python :: 3",
-    "Programming Language :: C++"
+    "Programming Language :: C++",
 ]
-dependencies = [
-    'numpy>=1.23.3,<2.0.0',
-]
-
-
+dependencies = ['numpy>=1.23.3,<2.0.0']
