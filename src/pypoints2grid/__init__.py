@@ -4,6 +4,8 @@ from _points2grid import _points2grid
 from enum import Enum
 from typing import List, Tuple, Union
 
+__version__ = "0.2.2"
+
 
 class GridData(Enum):
     IDW = 1 << 0
