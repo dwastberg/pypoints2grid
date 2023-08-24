@@ -1,6 +1,5 @@
 import laspy
 import rasterio
-from rasterio.transform import Affine
 import numpy as np
 from time import time
 
@@ -23,7 +22,9 @@ cell_size = 0.5
 print("creating grid")
 start_time = time()
 dem = points2grid(pts, cell_size)
-print(f"grid created in {round(time() - start_time, 2)} seconds")
+print(
+    f"created {dem.shape[0]}x{dem.shape[1]} grid from {pts.shape[0]} points in {round(time() - start_time, 2)} seconds"
+)
 
 transform = rasterio.transform.from_origin(x_min, y_max, cell_size, cell_size)
 

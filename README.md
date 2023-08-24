@@ -53,7 +53,6 @@ the order in the __grid_data__ parameter. If k = 1 then the returned array will 
 ```python
 import laspy
 import rasterio
-from rasterio.transform import Affine
 import numpy as np
 from time import time
 
