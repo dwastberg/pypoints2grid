@@ -2,15 +2,19 @@
 # pypoints2grid
 
 Python library wrapping the points2grid algorithm for generate Digital Elevation Models (DEMs)
-from pointclouds.
-
-
-
+from pointclouds. The original points2grid software was developed by the San Diego Supercomputer Center.
 
 ## Acknowledgements
 
 - [Original C++ implementation](https://github.com/CRREL/points2grid/)
 - [Information about points2grid algorithm](https://www.opentopography.org/otsoftware/points2grid)
+
+## Installation
+
+```shell
+pip install pypoints2grid
+```
+
 
 ## Usage
 Note unlike the original C++ version of points2grid, pypoints2grid isn't a command line tool and doesn't read or write data
@@ -49,6 +53,8 @@ the order in the __grid_data__ parameter. If k = 1 then the returned array will 
 
 
 ## Example
+
+A complete script for generating a DEM from a point cloud using laspy and rasterio:
 
 ```python
 import laspy
@@ -97,5 +103,8 @@ with rasterio.open(
 
 ## License
 
-[BSD](https://choosealicense.com/licenses/bsd-4-clause/)
+pypoins2grid is licensed under the MIT license. 
+The original points2grid software is licensed under the 
+[BSD 4-clause](https://choosealicense.com/licenses/bsd-4-clause/) license.
+
 
