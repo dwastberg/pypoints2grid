@@ -75,7 +75,7 @@ x_min, y_min, z_min = pts.min(axis=0)
 x_max, y_max, z_max = pts.max(axis=0)
 
 print(f"loaded {pts.shape[0]} points")
-print(f"with bounnds: ({x_min}, {y_min}), ({x_max}, {y_max})")
+print(f"with bounds: ({x_min}, {y_min}), ({x_max}, {y_max})")
 cell_size = 0.5
 
 print("creating grid")
