@@ -5,13 +5,13 @@ from pybind11.setup_helpers import Pybind11Extension, build_ext
 
 packages = ["pypoints2grid"]
 
-package_data = {"": ["*"], "pypoints2grid": ["src/*"]}
+package_data = {"": ["*"], "pypoints2grid": ["src/*", "src/include/*"]}
 
 install_requires = ["numpy>=1.23.3,<2.0.0", "pybind11>=2.10.0,<3.0.0"]
 
 setup_kwargs = {
     "name": "pypoints2grid",
-    "version": "0.1.4",
+    "version": "0.1.5",
 }
 
 

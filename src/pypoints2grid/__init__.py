@@ -4,7 +4,7 @@ from _points2grid import _points2grid
 from enum import Enum
 from typing import List, Tuple, Union
 
-__version__ = "0.1.4"
+__version__ = "0.1.5"
 
 
 class GridData(Enum):
