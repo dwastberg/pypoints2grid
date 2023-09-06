@@ -11,7 +11,7 @@ install_requires = ["numpy>=1.23.3,<2.0.0", "pybind11>=2.10.0,<3.0.0"]
 
 setup_kwargs = {
     "name": "pypoints2grid",
-    "version": "0.0.6",
+    "version": "0.1.6",
 }
 
 
