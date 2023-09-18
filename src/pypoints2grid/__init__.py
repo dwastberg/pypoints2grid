@@ -77,6 +77,7 @@ def points2grid(
     )
     if result.shape[2] == 1:
         result = np.squeeze(result, axis=2)
+    result = np.swapaxes(result,0,1)
     if flip:
         result = np.flipud(result)
 

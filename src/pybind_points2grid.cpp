@@ -94,7 +94,7 @@ py::array_t<double> _points2grid(py::array_t<double> pts, double cell_size,
     double *result_ptr = (double *) result_buf.ptr;
     for (size_t idx = 0; idx < size_x; idx++) {
         for (size_t idy = 0; idy < size_y; idy++) {
-            auto gp = grid_interp.get_grid_point(idy, idx);
+            auto gp = grid_interp.get_grid_point(idx, idy);
             size_t offset = idx * size_y * num_layers + idy * num_layers;
             if (grid_data & GridData::IDW) {
                 result_ptr[offset] = gp.Zidw;
@@ -118,7 +118,7 @@ py::array_t<double> _points2grid(py::array_t<double> pts, double cell_size,
             }
         }
     }
-    result.resize({size_y, size_x, num_layers});
+    result.resize({size_x, size_y, num_layers});
     //auto t1_get = std::chrono::high_resolution_clock::now();
     // std::cout << "get time: " << std::chrono::duration_cast<std::chrono::milliseconds>(t1_get - t0_get).count() << " ms" << std::endl;
     return result;
