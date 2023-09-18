@@ -22,6 +22,7 @@ def points2grid(
     radius: float = 0,
     window_size: int = 3,
     grid_data: List[str] = ["idw"],
+    flip: bool = True,
     verbose: bool = False,
 ) -> np.ndarray:
     """
@@ -34,6 +35,7 @@ def points2grid(
         radius (float, optional): The search radius for each point. If 0, a default radius is computed based on the cell size. Defaults to 0.
         window_size (int, optional): The size of the interpolation window. Must be an odd integer.
         grid_data (List[str], optional): A list of strings specifying the data interpolations to return. Valid values are 'idw', 'min', 'max', 'mean', 'std' Defaults to ['idw'].
+        flip (bool, optional): Whether to flip the output grid (placing (0,0) in the top left corner). Defaults to True.
         verbose (bool, optional): Whether to print verbose output. Defaults to False.
 
     Returns:
@@ -73,7 +75,12 @@ def points2grid(
         grid_data_enum,
         verbose,
     )
-    result = np.squeeze(result)
+    if result.shape[2] == 1:
+        result = np.squeeze(result, axis=2)
+    if flip:
+        result = np.flipud(result)
+
+
     if len(grid_data) > 1:
         grid_data_args = np.argsort(grid_data)
         result = result[:, :, grid_data_args]

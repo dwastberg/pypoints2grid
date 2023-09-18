@@ -8,27 +8,28 @@ import numpy as np
 class TestPoints2Grid(unittest.TestCase):
     def test_points2grid1(self):
         pts = np.array([[0, 0, 1], [0, 1, 2], [1, 0, 3], [1, 1, 4]])
-        expected_grid = np.array([2.5])
+        expected_grid = np.array([[2.5]])
         grid = points2grid(pts, cell_size=1)
         np.testing.assert_array_almost_equal(grid, expected_grid)
 
     def test_points2grid05(self):
         pts = np.array([[0, 0, 1], [0, 1, 2], [1, 0, 3], [1, 1, 4]])
-        expected_grid = np.array([[1.0, 2.0], [3.0, 4.0]])
-        grid = points2grid(pts, cell_size=0.5)
+        expected_grid = np.array([[1.0, 3.0], [2.0, 4.0]])
+        grid = points2grid(pts, cell_size=0.5, flip=False)
         np.testing.assert_array_almost_equal(grid, expected_grid)
 
 
 class TestDemSize(unittest.TestCase):
     def setUp(self) -> None:
         self.pts = np.random.rand(1000, 3)
+        self.pts[:,0] *= 2
 
     def test_dem_size(self):
         dem = points2grid(self.pts, 0.1)
-        self.assertEqual(dem.shape, (10, 10), "incorrect dem size")
+        self.assertEqual(dem.shape, (10, 20), "incorrect dem size")
 
         dem2 = points2grid(self.pts, 0.01)
-        self.assertEqual(dem2.shape, (100, 100), "incorrect dem size")
+        self.assertEqual(dem2.shape, (100, 200), "incorrect dem size")
 
     def test_dem_bounding_box(self):
         bounds = (0.25, 0.25, 0.75, 0.75)
