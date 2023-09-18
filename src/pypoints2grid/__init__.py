@@ -4,7 +4,7 @@ from _points2grid import _points2grid
 from enum import Enum
 from typing import List, Tuple, Union
 
-__version__ = "0.1.6"
+__version__ = "0.1.8"
 
 
 class GridData(Enum):
@@ -79,7 +79,6 @@ def points2grid(
         result = np.squeeze(result, axis=2)
     if flip:
         result = np.flipud(result)
-
 
     if len(grid_data) > 1:
         grid_data_args = np.argsort(grid_data)
