@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "pypoints2grid"
-version = "0.1.9"
+version = "0.2.0"
 description = "implemention of points2grid algorithm"
 readme = "README.md"
 authors = [{ name = "Dag Wästberg", email = "dwastberg@gmail.com" }]
@@ -16,4 +16,4 @@ classifiers = [
     "Programming Language :: Python :: 3",
     "Programming Language :: C++",
 ]
-dependencies = ['numpy>=1.19.2,<2.0.0']
+dependencies = ['numpy>=1.19.2']
