@@ -74,4 +74,4 @@ jobs:
           # password: ${{ secrets.PYPI_TOKEN }}
           password: ${{ secrets.TEST_PYPI_TOKEN }}
           repository-url: https://test.pypi.org/legacy/
-          
+          verbose: true
