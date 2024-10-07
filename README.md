@@ -31,7 +31,7 @@ dem = points2grid(pts, cell_size, bounds=None, radius=0, window_size=3, grid_dat
 ```
 ### Parameters
  - __pts__: list of lists or numpy array of shape (n, 3) containing x, y, z coordinates of points
- - __cell_size__: size of the grid cells in meters
+ - __cell_size__: size of the grid cells in same units as points coordinates.
  - __bounds__: list of 4 floats containing the bounds of the grid in the form (xmin, ymin, xmax, ymax).
 points outside these bounds will be ignored. If None, all points will be included.
  - __radius__: radius of the search circle in meters. If 0, the radius will be computed from the cell size.
