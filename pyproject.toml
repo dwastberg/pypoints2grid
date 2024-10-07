@@ -9,7 +9,7 @@ description = "implemention of points2grid algorithm"
 readme = "README.md"
 authors = [{ name = "Dag Wästberg", email = "dwastberg@gmail.com" }]
 maintainers = [{ name = "Dag Wästberg", email = "dwastberg@gmail.com" }]
-requires-python = ">=3.9"
+requires-python = ">=3.10"
 license = { text = "BSD-4-Clause" }
 classifiers = [
     "Intended Audience :: Science/Research",
