@@ -39,7 +39,7 @@ jobs:
           python -m pip install --upgrade pip setuptools
           pip install cibuildwheel twine pybind11
           
-      - uses: pypa/cibuildwheel@v2.17
+      - uses: pypa/cibuildwheel@v2.21
         env:
           CIBW_ARCHS_MACOS: auto universal2
           MACOSX_DEPLOYMENT_TARGET: 10.14
