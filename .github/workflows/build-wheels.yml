@@ -32,7 +32,7 @@ jobs:
         os: [ubuntu-latest, windows-latest, macOS-latest]
         exclude:
           - os: macos-latest
-            python-version: pypy*  # pypy wheels won't build on macOS
+            python-version: pypy310  # pypy wheels won't build on macOS
 
     steps:
       - uses: actions/checkout@v3
