@@ -15,6 +15,7 @@ execute_process(
     COMMAND "${Python_EXECUTABLE}" -m pybind11 --cmakedir
     OUTPUT_STRIP_TRAILING_WHITESPACE OUTPUT_VARIABLE pybind11_DIR)
 
+message(STATUS "Set pybind11_DIR to ${pybind11_DIR}")
 find_package(pybind11 REQUIRED CONFIG)
 
 include_directories(${CMAKE_SOURCE_DIR}/src/include)

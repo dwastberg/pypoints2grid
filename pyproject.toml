@@ -15,7 +15,7 @@ classifiers = [
 dependencies = ['numpy>=1.19.2']
 
 [build-system]
-requires = ["scikit-build-core", "nanobind", "wheel"]
+requires = ["scikit-build-core", "pybind11", "wheel"]
 build-backend = "scikit_build_core.build"
 
 [tool.scikit-build]
