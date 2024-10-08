@@ -1,6 +1,6 @@
 [project]
 name = "pypoints2grid"
-version = "0.2.2b1"
+version = "0.2.2"
 description = "implemention of points2grid algorithm"
 readme = "README.md"
 authors = [{ name = "Dag Wästberg", email = "dwastberg@gmail.com" }]

@@ -57,7 +57,7 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: pypi
-      url: https://test.pypi.org/p/pypoints2grid
+      url: https://pypi.org/p/pypoints2grid
     permissions:
       id-token: write
 
@@ -71,7 +71,7 @@ jobs:
       - name: Publish wheels
         uses: pypa/gh-action-pypi-publish@release/v1
         with:
-          # password: ${{ secrets.PYPI_TOKEN }}
-          password: ${{ secrets.TEST_PYPI_TOKEN }}
-          repository-url: https://test.pypi.org/legacy/
-          verbose: true
+          password: ${{ secrets.PYPI_TOKEN }}
+          # password: ${{ secrets.TEST_PYPI_TOKEN }}
+          # repository-url: https://test.pypi.org/legacy/
+          # verbose: true
