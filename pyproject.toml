@@ -1,10 +1,6 @@
-[build-system]
-requires = ["setuptools>=42", "pybind11"]
-build-backend = "setuptools.build_meta"
-
 [project]
 name = "pypoints2grid"
-version = "0.2.0"
+version = "0.2.1"
 description = "implemention of points2grid algorithm"
 readme = "README.md"
 authors = [{ name = "Dag Wästberg", email = "dwastberg@gmail.com" }]
@@ -17,3 +13,12 @@ classifiers = [
     "Programming Language :: C++",
 ]
 dependencies = ['numpy>=1.19.2']
+
+[build-system]
+requires = ["scikit-build-core", "pybind11", "wheel"]
+build-backend = "scikit_build_core.build"
+
+[tool.scikit-build]
+wheel.expand-macos-universal-tags = true
+build.verbose = true
+sdist.exclude = ["*.whl", "*.egg-info", "build", "dist"]
